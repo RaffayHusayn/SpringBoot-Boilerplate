@@ -12,8 +12,6 @@ public class SpringBootBoilerPlateApplication {
     public static void main(String[] args) {
 
         ConfigurableApplicationContext context = run(SpringBootBoilerPlateApplication.class, args);
-        HomeController homeController = context.getBean(HomeController.class);
-        homeController.showHome();
     }
 
 }
