@@ -4,6 +4,10 @@
     <title>Home page</title>
 </head>
 <body>
-this is the home page
+${outputHome}
+<form action="home" name="name">
+    <input name = "name">
+    <input type="submit" >
+</form>
 </body>
 </html>
