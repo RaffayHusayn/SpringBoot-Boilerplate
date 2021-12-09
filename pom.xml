@@ -27,6 +27,17 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--Same version as the Embedded Tomcat provided by the Spring Boot
+        This is required to make tomcat able to convert jsp into servlet
+         Because springboot doesn't support Jsp straight out of the box-->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jasper</artifactId>
+            <version>9.0.55</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
