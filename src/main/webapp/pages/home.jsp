@@ -4,7 +4,7 @@
     <title>Home page</title>
 </head>
 <body>
-${outputHome}
+${objOutput}
 <form action="home" name="name">
     <input name = "name">
     <input type="submit" >
