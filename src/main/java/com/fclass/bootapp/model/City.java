@@ -1,4 +1,4 @@
-package com.fclass.bootapp;
+package com.fclass.bootapp.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

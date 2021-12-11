@@ -1,0 +1,1 @@
+insert into city values (1,"New York", "US");

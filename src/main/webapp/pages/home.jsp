@@ -5,10 +5,10 @@
 </head>
 <body>
 ${objOutput}
-<form action="home" >
-    <input name = "id">
-    <input name = "name">
-    <input name = "country">
+<form action="addcity" >
+    <input name = "cityId">
+    <input name = "cityName">
+    <input name = "cityCountry">
     <input type="submit" >
 </form>
 </body>
