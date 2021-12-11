@@ -4,12 +4,21 @@
     <title>Home page</title>
 </head>
 <body>
-${objOutput}
+
+<h2>Add a new City</h2>
 <form action="addcity" >
     <input name = "cityId">
     <input name = "cityName">
     <input name = "cityCountry">
     <input type="submit" >
 </form>
+
+
+<h2>Find a City</h2>
+<form action="getcity">
+    <input name = "cityId">
+    <input type="submit">
+</form>
+
 </body>
 </html>

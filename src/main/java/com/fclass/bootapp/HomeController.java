@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Optional;
 
 //Name could be anything, it doesn't have to be Home to Control the home.jsp View
 @Controller
@@ -42,5 +45,15 @@ public class HomeController {
     public @ResponseBody Iterable<City> allCity(){
         return cityRepository.findAll();
 
+    }
+
+    @RequestMapping("/getcity")
+    public ModelAndView getCity(@RequestParam int cityId){
+        ModelAndView mv = new ModelAndView();
+        Optional<City> city = cityRepository.findById(cityId);//can use optional<city> so don't have to deal with null objects from database
+        System.out.println(city);
+        mv.setViewName("getcity");
+        mv.addObject ("city", city);
+        return mv;
     }
 }
