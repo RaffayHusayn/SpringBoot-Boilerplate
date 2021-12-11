@@ -1,6 +1,11 @@
 package com.fclass.bootapp;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class City {
+    @Id
     int cityId;
     String cityName;
     String cityCountry;
