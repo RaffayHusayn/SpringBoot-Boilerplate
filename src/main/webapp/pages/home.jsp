@@ -20,5 +20,12 @@
     <input type="submit">
 </form>
 
+${deletecity}
+<h2>Delete a City</h2>
+<form action="deletecity">
+    <input name = "cityId">
+    <input type="submit">
+</form>
+
 </body>
 </html>

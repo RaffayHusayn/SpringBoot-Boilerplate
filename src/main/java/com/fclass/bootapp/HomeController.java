@@ -56,4 +56,20 @@ public class HomeController {
         mv.addObject ("city", city);
         return mv;
     }
+
+    @RequestMapping("/deletecity")
+    public ModelAndView deleteCity(@RequestParam int cityId){
+
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("home");
+        System.out.println("in delete city controller");
+        if(cityRepository.existsById(cityId)) {
+            cityRepository.deleteById(cityId);
+            mv.addObject("deletecity", "city with id : "+ cityId+ " is deleted");
+            return mv;
+        }else{
+            mv.addObject("deletecity", "the city with id : "+cityId+ " doesn't exist");
+            return mv;
+        }
+    }
 }
