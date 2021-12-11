@@ -27,5 +27,13 @@ ${deletecity}
     <input type="submit">
 </form>
 
+${updatecity}
+<h2>Update City</h2>
+<form action="updatecity" >
+    <input name = "cityId">
+    <input name = "cityName">
+    <input name = "cityCountry">
+    <input type="submit" >
+</form>
 </body>
 </html>

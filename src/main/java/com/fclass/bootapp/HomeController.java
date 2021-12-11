@@ -71,5 +71,25 @@ public class HomeController {
             mv.addObject("deletecity", "the city with id : "+cityId+ " doesn't exist");
             return mv;
         }
+
+    }
+
+
+    @RequestMapping("/updatecity")
+    public ModelAndView updateCity( City city){
+        System.out.println("in the update city method");
+        ModelAndView mv =new ModelAndView();
+        mv.setViewName("home");
+
+        if(cityRepository.existsById(city.getCityId())){
+            cityRepository.save(city);
+            mv.addObject("updatecity", "city updated");
+            return mv;
+
+        }else{
+           mv.addObject("updatecity", "City with id : "+ city.getCityId()+ " doesn't exist so can't update");
+           return mv;
+        }
+
     }
 }
