@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 //Name could be anything, it doesn't have to be Home to Control the home.jsp View
@@ -34,6 +35,12 @@ public class HomeController {
     public String addCity(City karachi){
         cityRepository.save(karachi);
         return "home";
+
+    }
+
+    @RequestMapping("/allcity")
+    public @ResponseBody Iterable<City> allCity(){
+        return cityRepository.findAll();
 
     }
 }
