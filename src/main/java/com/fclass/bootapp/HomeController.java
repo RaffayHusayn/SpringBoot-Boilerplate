@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.lang.module.ModuleFinder;
+import java.util.List;
 import java.util.Optional;
 
 //Name could be anything, it doesn't have to be Home to Control the home.jsp View
@@ -78,6 +80,7 @@ public class HomeController {
     @RequestMapping("/updatecity")
     public ModelAndView updateCity( City city){
         System.out.println("in the update city method");
+
         ModelAndView mv =new ModelAndView();
         mv.setViewName("home");
 
@@ -91,5 +94,17 @@ public class HomeController {
            return mv;
         }
 
+    }
+
+
+    @RequestMapping("/findcitybycountry")
+    public ModelAndView findCityByCountry(@RequestParam String cityCountry){
+
+        List<City> cityByCountry =  cityRepository.getCityByCityCountry(cityCountry);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("getcity");
+        System.out.println(cityByCountry);
+        mv.addObject("citybycountry", cityByCountry);
+        return mv;
     }
 }
