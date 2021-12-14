@@ -1,4 +1,5 @@
 package com.fclass.bootapp.model;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -13,5 +14,13 @@ public interface CityRepository extends CrudRepository<City, Integer> {
     List<City> findByCityIdGreaterThan(int Id);
     List<City> findByCityNameStartingWith(String prefix);
     List<City> findByCityCountryOrderByCityName(String city);
+
+
+    /*
+    For more complex queries we can use @Query annotation and just
+    write down a query in JPQL by default but we can also use native SQL
+     */
+    @Query("select cityName from City where cityCountry like ?1")
+    List<String> findCityNameWithCountryPattern(String pattern);
 
 }

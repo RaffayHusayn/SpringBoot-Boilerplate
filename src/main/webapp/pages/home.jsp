@@ -62,5 +62,11 @@ ${updatecity}
     <input name="cityCountry" placeholder="Country">
     <input type="submit" value="Search">
 </form>
+
+<form action = "findcitynamewithcountrypattern">
+    <h2>Find City Name with Specific Country Name Pattern</h2>
+    <input name="pattern" placeholder="Pattern">
+    <input type="submit" value="Search">
+</form>
 </body>
 </html>

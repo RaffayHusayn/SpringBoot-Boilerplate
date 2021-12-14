@@ -96,7 +96,6 @@ public class HomeController {
 
     }
 
-
     @RequestMapping("/findcitybycountry")
     public ModelAndView findCityByCountry(@RequestParam String cityCountry){
 
@@ -137,4 +136,13 @@ public class HomeController {
         mv.addObject("countryorderbycity", countriesOrderByCity);
         return mv;
     }
+
+   @RequestMapping("/findcitynamewithcountrypattern")
+    public ModelAndView findCityNameWithCountryPattern(@RequestParam String pattern){
+        List<String> cityNames = cityRepository.findCityNameWithCountryPattern(pattern);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("getcity");
+        mv.addObject("cityNamesWithCountryPattern", cityNames);
+        return mv;
+   }
 }

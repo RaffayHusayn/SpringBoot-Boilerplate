@@ -25,5 +25,9 @@ ${citynamesstartingwith}
    All the Cities in the Mentioned Country Ordered by their Names :
 </h2>
 ${countryorderbycity}
+<h2>
+    All Cities whose Country name have a specific pattern mentioned :
+</h2>
+${cityNamesWithCountryPattern}
 </body>
 </html>
