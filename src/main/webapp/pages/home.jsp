@@ -41,5 +41,12 @@ ${updatecity}
     <input name="cityCountry" placeholder="Country">
     <input type="submit" value="Search">
 </form>
+
+
+<form action = "findcitybygreaterid">
+    <h2>Find City IDs greater than</h2>
+    <input name="cityId" placeholder="Id">
+    <input type="submit" value="Search">
+</form>
 </body>
 </html>

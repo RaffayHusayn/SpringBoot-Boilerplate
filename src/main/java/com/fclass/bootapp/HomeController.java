@@ -107,4 +107,14 @@ public class HomeController {
         mv.addObject("citybycountry", cityByCountry);
         return mv;
     }
+
+
+    @RequestMapping("/findcitybygreaterid")
+    public ModelAndView findCityIdGreaterThan(@RequestParam int cityId){
+        List<City> idsGreaterThan = cityRepository.findByCityIdGreaterThan(cityId);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("getcity");
+        mv.addObject("cityidsgreaterthan", idsGreaterThan);
+        return mv;
+    }
 }
