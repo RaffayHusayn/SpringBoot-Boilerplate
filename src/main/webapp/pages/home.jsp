@@ -48,5 +48,12 @@ ${updatecity}
     <input name="cityId" placeholder="Id">
     <input type="submit" value="Search">
 </form>
+
+
+<form action = "findcitybynamestartingwith">
+    <h2>Find City by Name starting with</h2>
+    <input name="prefix" placeholder="Prefix">
+    <input type="submit" value="Search">
+</form>
 </body>
 </html>

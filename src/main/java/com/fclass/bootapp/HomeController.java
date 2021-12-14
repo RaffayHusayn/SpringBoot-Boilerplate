@@ -117,4 +117,15 @@ public class HomeController {
         mv.addObject("cityidsgreaterthan", idsGreaterThan);
         return mv;
     }
+
+
+    @RequestMapping("/findcitybynamestartingwith")
+    public ModelAndView findByCityNameStartingWith(@RequestParam String prefix){
+
+        List<City> cityNamesStartingWith = cityRepository.findByCityNameStartingWith(prefix);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("getcity");
+        mv.addObject("citynamesstartingwith", cityNamesStartingWith);
+        return mv;
+    }
 }

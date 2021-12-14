@@ -11,5 +11,6 @@ public interface CityRepository extends CrudRepository<City, Integer> {
      */
     List<City> getCityByCityCountry(String Country);
     List<City> findByCityIdGreaterThan(int Id);
+    List<City> findByCityNameStartingWith(String prefix);
 
 }

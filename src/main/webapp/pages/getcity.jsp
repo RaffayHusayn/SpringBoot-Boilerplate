@@ -17,5 +17,9 @@ ${citybycountry}
     IDs greater than :
 </h2>
 ${cityidsgreaterthan}
+<h2>
+    City Names Starting With :
+</h2>
+${citynamesstartingwith}
 </body>
 </html>
