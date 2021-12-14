@@ -4,6 +4,7 @@ import com.fclass.bootapp.model.City;
 import com.fclass.bootapp.model.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -143,6 +144,16 @@ public class HomeController {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("getcity");
         mv.addObject("cityNamesWithCountryPattern", cityNames);
+        return mv;
+   }
+
+
+   @RequestMapping("/findcityidwithcityandcountry")
+    public ModelAndView findCityIdWithCityAndCountry(@RequestParam String cityName,@RequestParam String cityCountry){
+        int cityId = cityRepository.findCityIdWithCityAndCountry(cityName, cityCountry);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("getcity");
+        mv.addObject("cityId", cityId);
         return mv;
    }
 }

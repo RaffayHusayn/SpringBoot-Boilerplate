@@ -20,7 +20,12 @@ public interface CityRepository extends CrudRepository<City, Integer> {
     For more complex queries we can use @Query annotation and just
     write down a query in JPQL by default but we can also use native SQL
      */
+    // JPQL query with 1 Index query parameter
     @Query("select cityName from City where cityCountry like ?1")
     List<String> findCityNameWithCountryPattern(String pattern);
+
+    // JPQL query with 2 Index query Parameter
+    @Query("select cityId from City where cityName = ?1 and cityCountry = ?2")
+    int findCityIdWithCityAndCountry(String cityName, String cityCountry);
 
 }

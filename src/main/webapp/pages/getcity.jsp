@@ -29,5 +29,9 @@ ${countryorderbycity}
     All Cities whose Country name have a specific pattern mentioned :
 </h2>
 ${cityNamesWithCountryPattern}
+<h2>
+    City ID when City Name and Country Name are mentioned :
+</h2>
+${cityId}
 </body>
 </html>
