@@ -21,5 +21,9 @@ ${cityidsgreaterthan}
     City Names Starting With :
 </h2>
 ${citynamesstartingwith}
+<h2>
+   All the Cities in the Mentioned Country Ordered by their Names :
+</h2>
+${countryorderbycity}
 </body>
 </html>

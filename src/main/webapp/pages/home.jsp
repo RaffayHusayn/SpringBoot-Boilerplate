@@ -55,5 +55,12 @@ ${updatecity}
     <input name="prefix" placeholder="Prefix">
     <input type="submit" value="Search">
 </form>
+
+
+<form action = "findbycountrynameorderedbycityname">
+    <h2>Find City by Name Ordered by Country Name</h2>
+    <input name="cityCountry" placeholder="Country">
+    <input type="submit" value="Search">
+</form>
 </body>
 </html>

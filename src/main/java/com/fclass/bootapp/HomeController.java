@@ -128,4 +128,13 @@ public class HomeController {
         mv.addObject("citynamesstartingwith", cityNamesStartingWith);
         return mv;
     }
+
+    @RequestMapping("/findbycountrynameorderedbycityname")
+    public ModelAndView findByCountryOrderByCity(@RequestParam String cityCountry){
+        List<City> countriesOrderByCity = cityRepository.findByCityCountryOrderByCityName(cityCountry);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("getcity");
+        mv.addObject("countryorderbycity", countriesOrderByCity);
+        return mv;
+    }
 }

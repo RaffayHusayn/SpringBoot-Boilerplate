@@ -9,8 +9,9 @@ public interface CityRepository extends CrudRepository<City, Integer> {
     function body. If the function is named in a certain way as required by Spring
     then Spring will take care of the function body
      */
-    List<City> getCityByCityCountry(String Country);
+    List<City> getCityByCityCountry(String country);
     List<City> findByCityIdGreaterThan(int Id);
     List<City> findByCityNameStartingWith(String prefix);
+    List<City> findByCityCountryOrderByCityName(String city);
 
 }
