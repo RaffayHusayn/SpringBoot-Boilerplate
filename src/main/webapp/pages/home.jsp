@@ -77,5 +77,11 @@ ${updatecity}
     <input type="submit" value="Search">
 </form>
 
+<form action="findcitieswithcountry">
+    <h2>Find Cities Info with Country Name</h2>
+    <input  name="cityCountry" placeholder="Country" >
+    <input type="submit" value="Search">
+</form>
+
 </body>
 </html>

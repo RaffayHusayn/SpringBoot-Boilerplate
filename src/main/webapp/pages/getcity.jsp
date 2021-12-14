@@ -33,5 +33,9 @@ ${cityNamesWithCountryPattern}
     City ID when City Name and Country Name are mentioned :
 </h2>
 ${cityId}
+<h2>
+   Cities when the Country Name is mentioned :
+</h2>
+${citieswithcountry}
 </body>
 </html>

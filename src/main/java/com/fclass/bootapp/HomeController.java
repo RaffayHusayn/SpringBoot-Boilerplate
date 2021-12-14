@@ -2,6 +2,7 @@ package com.fclass.bootapp;
 
 import com.fclass.bootapp.model.City;
 import com.fclass.bootapp.model.CityRepository;
+import net.bytebuddy.matcher.StringMatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -154,6 +155,16 @@ public class HomeController {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("getcity");
         mv.addObject("cityId", cityId);
+        return mv;
+   }
+
+
+   @RequestMapping("/findcitieswithcountry")
+    public ModelAndView findCityWithCountry(@RequestParam String cityCountry){
+        List<City> citiesWithCountry = cityRepository.findCityByCountry(cityCountry);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("getcity");
+        mv.addObject("citieswithcountry", citiesWithCountry);
         return mv;
    }
 }

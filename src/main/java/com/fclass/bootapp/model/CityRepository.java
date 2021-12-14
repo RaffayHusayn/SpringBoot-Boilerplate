@@ -1,6 +1,7 @@
 package com.fclass.bootapp.model;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -27,5 +28,10 @@ public interface CityRepository extends CrudRepository<City, Integer> {
     // JPQL query with 2 Index query Parameter
     @Query("select cityId from City where cityName = ?1 and cityCountry = ?2")
     int findCityIdWithCityAndCountry(String cityName, String cityCountry);
+
+    //JPQL query with named query parameter
+    @Query("from City where cityCountry = :country")
+    List<City> findCityByCountry(@Param("country") String country);//named query param and @Param should be same, String variable can be anything
+
 
 }
