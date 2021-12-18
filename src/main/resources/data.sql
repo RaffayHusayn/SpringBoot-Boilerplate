@@ -1,1 +1,1 @@
-insert into city(city_id, city_country, city_name) values (1 ,  "Pakistan", "Karachi");
+insert into City(city_id, city_country, city_name) values(9 ,"Pakistan","Karachi");

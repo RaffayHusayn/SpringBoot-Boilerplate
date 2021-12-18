@@ -21,6 +21,10 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    //We need Spring to execute this method and store the returned value in a Bean factory like we usually
+    //do in the Configuration files where we declear Beans and set up the values that we want them to have
+    //either using setters or constructors
     @Bean
     @Override
     protected UserDetailsService userDetailsService() {
