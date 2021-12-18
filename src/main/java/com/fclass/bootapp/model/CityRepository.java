@@ -7,9 +7,11 @@ import java.util.List;
 
 public interface CityRepository extends CrudRepository<City, Integer> {
     /*
+    ======================================================================================
     These are the functions that you have to just mention without giving any
     function body. If the function is named in a certain way as required by Spring
     then Spring will take care of the function body
+    ======================================================================================
      */
     List<City> getCityByCityCountry(String country);
     List<City> findByCityIdGreaterThan(int Id);
@@ -18,8 +20,10 @@ public interface CityRepository extends CrudRepository<City, Integer> {
 
 
     /*
+    ======================================================================================
     For more complex queries we can use @Query annotation and just
     write down a query in JPQL by default but we can also use native SQL
+    ======================================================================================
      */
     // JPQL query with 1 Index query parameter
     @Query("select cityName from City where cityCountry like ?1")
