@@ -38,6 +38,18 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("/login")
+    public String loginPage(){
+        System.out.println("in the login page");
+        return "login";
+    }
+
+    @RequestMapping("logout-success")
+    public String logoutPage(){
+        System.out.println("log out success");
+        return "logout";
+    }
+
     @RequestMapping("/addcity")
     public String addCity(City karachi){
         cityRepository.save(karachi);
