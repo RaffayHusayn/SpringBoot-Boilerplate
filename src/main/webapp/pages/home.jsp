@@ -4,7 +4,7 @@
     <title>Home page</title>
 </head>
 <body>
-
+<a href="/logout">logout</a>
 <h2>Add a new City</h2>
 <form action="addcity" >
     <input name = "cityId" placeholder="Id">

@@ -4,6 +4,7 @@
     <title>Index page</title>
 </head>
 <body>
+<a href="/logout">logout</a>
 this is the index page
 </body>
 </html>
