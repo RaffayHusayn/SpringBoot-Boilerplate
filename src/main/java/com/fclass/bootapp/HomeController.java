@@ -35,7 +35,7 @@ public class HomeController {
     @RequestMapping("")
     public String showIndex(){
         System.out.println("in the showIndex method");
-        return "index";
+        return "home";
     }
 
     @RequestMapping("/login")
