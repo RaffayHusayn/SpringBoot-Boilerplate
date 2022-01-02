@@ -4,6 +4,10 @@
     <title>Home page</title>
 </head>
 <body>
+<%
+    //prints the logged in username at the top
+    out.println("user : " + request.getUserPrincipal().getName());
+%>
 <a href="/logout">logout</a>
 <h2>Add a new City</h2>
 <form action="addcity" >
@@ -20,14 +24,14 @@
     <input type="submit" value="Search">
 </form>
 
-${deletecity}
+${deletecity} <!--attribute name in ModelAndView object-->
 <h2>Delete a City</h2>
 <form action="deletecity" >
     <input name = "cityId" placeholder="Id">
     <input type="submit" value="Delete">
 </form>
 
-${updatecity}
+${updatecity} <!--attribute name in ModelAndView object-->
 <h2>Update City</h2>
 <form action="updatecity" >
     <input name = "cityId" placeholder="Id">
