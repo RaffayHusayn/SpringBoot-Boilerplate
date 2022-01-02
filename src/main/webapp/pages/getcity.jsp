@@ -4,6 +4,12 @@
     <title>Show City</title>
 </head>
 <body>
+
+<%
+    //prints the logged in username at the top
+    out.println("user : " + request.getUserPrincipal().getName());
+%>
+
 <a href="home">Home </a>
 <h2>
     City by ID:
