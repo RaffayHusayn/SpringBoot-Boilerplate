@@ -14,8 +14,10 @@ import java.io.IOException;
 @Slf4j
 public class CustomFirstFilter implements Filter {
 
+    int counter;
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        counter = 0 ;
         log.info("+++++++++++++++++ initializing the first custom filter ++++++++++++++++++++++++++");
     }
 
@@ -25,8 +27,14 @@ public class CustomFirstFilter implements Filter {
 
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
-        log.info("in the first custom filter -> {} : {}", request.getMethod(), request.getRequestURI());
-        filterChain.doFilter(request, response);
+        if(request.getServletPath().equals("/getcity") && counter < 10 ){
+
+            counter = counter + 1 ;
+            log.info("getcity filter called {} times -> {} : {} ",counter, request.getMethod(), request.getRequestURI());
+            filterChain.doFilter(request, response);
+        }else{
+            filterChain.doFilter(request, response);
+        }
 
     }
 
