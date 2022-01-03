@@ -7,7 +7,11 @@
 
 <%
     //prints the logged in username at the top
-    out.println("user : " + request.getUserPrincipal().getName());
+    if(request.getUserPrincipal() == null){
+        out.println("user: not Logged in");
+    }else {
+        out.println("user : " + request.getUserPrincipal().getName());
+    }
 %>
 
 <a href="home">Home </a>
