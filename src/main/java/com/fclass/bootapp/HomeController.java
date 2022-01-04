@@ -15,6 +15,7 @@ import java.util.Optional;
 
 //Name could be anything, it doesn't have to be Home to Control the home.jsp View
 @Controller
+//to enable CORS on all handler methods of this class, we can also do it on method level instead of class level if we want
 @CrossOrigin("https://www.codepunker.com")
 public class HomeController {
 
